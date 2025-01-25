@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://po8yex8gsy5p"]
 
-[ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_uniy6"]
+[ext_resource type="Texture2D" uid="uid://beyvngridvxwo" path="res://Art/Entities/Pin.png" id="1_e5ei8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nd06c"]
 radius = 24.1661
@@ -11,5 +11,5 @@ radius = 24.1661
 shape = SubResource("CircleShape2D_nd06c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.359375, 0.359375)
-texture = ExtResource("1_uniy6")
+scale = Vector2(0.0830078, 0.0830078)
+texture = ExtResource("1_e5ei8")

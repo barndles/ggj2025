@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b68hqpn7toado" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
-size = Vector2(100.721, 127.425)
+size = Vector2(98.6224, 413.01)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybqlw"]
 size = Vector2(54, 530)
@@ -23,47 +23,133 @@ script = ExtResource("1_6uok5")
 anchors_preset = 15
 
 [node name="LeftBorder" type="Sprite2D" parent="."]
-position = Vector2(18, 1105)
-scale = Vector2(0.476562, 17.3906)
+position = Vector2(18, 2573.5)
+scale = Vector2(0.476562, 40.3359)
 texture = ExtResource("1_4vo5e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LeftBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder/StaticBody2D"]
-position = Vector2(12.5902, 0.172501)
+position = Vector2(12.5902, 74.5662)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="RightBorder" type="Sprite2D" parent="."]
-position = Vector2(992, 1104)
-scale = Vector2(0.476562, 17.3906)
+position = Vector2(992, 3587)
+scale = Vector2(0.476562, 56.1875)
 texture = ExtResource("1_4vo5e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RightBorder"]
 position = Vector2(-25.1799, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder/StaticBody2D"]
-position = Vector2(12.5902, 0.172501)
+position = Vector2(11.5408, 68.5716)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="Pins" type="Node2D" parent="."]
 
+[node name="Pin70" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 526)
+
+[node name="Pin71" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 526)
+
+[node name="Pin72" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 526)
+
+[node name="Pin73" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 526)
+
+[node name="Pin74" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 526)
+
+[node name="Pin75" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 878)
+
+[node name="Pin76" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 878)
+
+[node name="Pin77" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 878)
+
+[node name="Pin78" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 878)
+
+[node name="Pin79" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 1238)
+
+[node name="Pin80" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 1238)
+
+[node name="Pin81" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 1238)
+
+[node name="Pin82" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 1238)
+
+[node name="Pin83" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 1238)
+
+[node name="Pin84" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 1590)
+
+[node name="Pin85" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 1590)
+
+[node name="Pin86" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 1590)
+
+[node name="Pin87" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 1590)
+
+[node name="Pin88" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 1590)
+
+[node name="Pin89" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 2110)
+
+[node name="Pin90" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 2110)
+
+[node name="Pin91" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 2110)
+
+[node name="Pin92" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 2110)
+
+[node name="Pin93" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 2110)
+
+[node name="Pin94" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 2462)
+
+[node name="Pin95" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 2462)
+
+[node name="Pin96" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 2462)
+
+[node name="Pin97" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 2462)
+
+[node name="Pin98" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 2822)
+
+[node name="Pin99" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 2822)
+
+[node name="Pin100" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 2822)
+
+[node name="Pin101" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 2822)
+
+[node name="Pin102" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 2822)
+
 [node name="Pin" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(201, 350)
-
-[node name="Pin" parent="Pins/Pin" instance=ExtResource("2_mf5l1")]
-position = Vector2(101, 176)
-
-[node name="Pin2" parent="Pins/Pin" instance=ExtResource("2_mf5l1")]
-position = Vector2(283, 176)
-
-[node name="Pin3" parent="Pins/Pin" instance=ExtResource("2_mf5l1")]
-position = Vector2(483, 176)
-
-[node name="Pin4" parent="Pins/Pin" instance=ExtResource("2_mf5l1")]
-position = Vector2(688, 176)
-
-[node name="Pin5" parent="Pins/Pin" instance=ExtResource("2_mf5l1")]
-position = Vector2(-93, 176)
 
 [node name="Pin2" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(383, 350)
@@ -77,21 +163,6 @@ position = Vector2(788, 350)
 [node name="Pin5" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(201, 702)
 
-[node name="Pin" parent="Pins/Pin5" instance=ExtResource("2_mf5l1")]
-position = Vector2(101, 176)
-
-[node name="Pin2" parent="Pins/Pin5" instance=ExtResource("2_mf5l1")]
-position = Vector2(283, 176)
-
-[node name="Pin3" parent="Pins/Pin5" instance=ExtResource("2_mf5l1")]
-position = Vector2(483, 176)
-
-[node name="Pin4" parent="Pins/Pin5" instance=ExtResource("2_mf5l1")]
-position = Vector2(688, 176)
-
-[node name="Pin5" parent="Pins/Pin5" instance=ExtResource("2_mf5l1")]
-position = Vector2(-93, 176)
-
 [node name="Pin6" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(383, 702)
 
@@ -103,21 +174,6 @@ position = Vector2(788, 702)
 
 [node name="Pin9" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(201, 1062)
-
-[node name="Pin" parent="Pins/Pin9" instance=ExtResource("2_mf5l1")]
-position = Vector2(101, 176)
-
-[node name="Pin2" parent="Pins/Pin9" instance=ExtResource("2_mf5l1")]
-position = Vector2(283, 176)
-
-[node name="Pin3" parent="Pins/Pin9" instance=ExtResource("2_mf5l1")]
-position = Vector2(483, 176)
-
-[node name="Pin4" parent="Pins/Pin9" instance=ExtResource("2_mf5l1")]
-position = Vector2(688, 176)
-
-[node name="Pin5" parent="Pins/Pin9" instance=ExtResource("2_mf5l1")]
-position = Vector2(-93, 176)
 
 [node name="Pin10" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(383, 1062)
@@ -131,29 +187,173 @@ position = Vector2(788, 1062)
 [node name="Pin13" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(201, 1414)
 
-[node name="Pin" parent="Pins/Pin13" instance=ExtResource("2_mf5l1")]
-position = Vector2(101, 176)
-
-[node name="Pin2" parent="Pins/Pin13" instance=ExtResource("2_mf5l1")]
-position = Vector2(283, 176)
-
-[node name="Pin3" parent="Pins/Pin13" instance=ExtResource("2_mf5l1")]
-position = Vector2(483, 176)
-
-[node name="Pin4" parent="Pins/Pin13" instance=ExtResource("2_mf5l1")]
-position = Vector2(688, 176)
-
-[node name="Pin5" parent="Pins/Pin13" instance=ExtResource("2_mf5l1")]
-position = Vector2(-93, 176)
-
 [node name="Pin14" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(383, 1414)
 
-[node name="Pin15" parent="Pins" instance=ExtResource("2_mf5l1")]
-position = Vector2(583, 1414)
-
 [node name="Pin16" parent="Pins" instance=ExtResource("2_mf5l1")]
 position = Vector2(788, 1414)
+
+[node name="Pin15" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 1934)
+
+[node name="Pin17" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 1934)
+
+[node name="Pin18" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(583, 1934)
+
+[node name="Pin19" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 1934)
+
+[node name="Pin20" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 2286)
+
+[node name="Pin21" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 2286)
+
+[node name="Pin22" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(583, 2286)
+
+[node name="Pin23" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 2286)
+
+[node name="Pin24" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 2646)
+
+[node name="Pin25" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 2646)
+
+[node name="Pin26" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(583, 2646)
+
+[node name="Pin27" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 2646)
+
+[node name="Pin46" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 3174)
+
+[node name="Pin47" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 3174)
+
+[node name="Pin48" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 3174)
+
+[node name="Pin49" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 3174)
+
+[node name="Pin50" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 3174)
+
+[node name="Pin28" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 2998)
+
+[node name="Pin29" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 2998)
+
+[node name="Pin30" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 2998)
+
+[node name="Pin51" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 3702)
+
+[node name="Pin52" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 3702)
+
+[node name="Pin53" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 3702)
+
+[node name="Pin54" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 3702)
+
+[node name="Pin55" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 3702)
+
+[node name="Pin31" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 3526)
+
+[node name="Pin32" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 3526)
+
+[node name="Pin33" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(583, 3526)
+
+[node name="Pin34" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 3526)
+
+[node name="Pin56" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 4054)
+
+[node name="Pin57" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 4054)
+
+[node name="Pin58" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 4054)
+
+[node name="Pin59" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 4054)
+
+[node name="Pin35" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 3878)
+
+[node name="Pin36" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 3878)
+
+[node name="Pin37" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(583, 3878)
+
+[node name="Pin38" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 3878)
+
+[node name="Pin39" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 4238)
+
+[node name="Pin40" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 4238)
+
+[node name="Pin41" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(583, 4238)
+
+[node name="Pin42" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 4238)
+
+[node name="Pin60" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 4414)
+
+[node name="Pin61" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 4414)
+
+[node name="Pin62" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 4414)
+
+[node name="Pin63" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 4414)
+
+[node name="Pin64" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 4414)
+
+[node name="Pin65" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(302, 4766)
+
+[node name="Pin66" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(484, 4766)
+
+[node name="Pin67" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(684, 4766)
+
+[node name="Pin68" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(889, 4766)
+
+[node name="Pin69" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(108, 4766)
+
+[node name="Pin43" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(201, 4590)
+
+[node name="Pin44" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(383, 4590)
+
+[node name="Pin45" parent="Pins" instance=ExtResource("2_mf5l1")]
+position = Vector2(788, 4590)
 
 [node name="BalloonLocations" type="Node2D" parent="."]
 
@@ -265,19 +465,223 @@ position = Vector2(688, 1762)
 [node name="Marker2D36" type="Marker2D" parent="BalloonLocations"]
 position = Vector2(890, 1762)
 
+[node name="Marker2D37" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(201, 2112)
+
+[node name="Marker2D38" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(392, 2112)
+
+[node name="Marker2D39" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(584, 2110)
+
+[node name="Marker2D40" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(792, 2110)
+
+[node name="Marker2D41" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(104, 2286)
+
+[node name="Marker2D42" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(296, 2286)
+
+[node name="Marker2D43" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(488, 2286)
+
+[node name="Marker2D44" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(694, 2286)
+
+[node name="Marker2D45" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(896, 2286)
+
+[node name="Marker2D46" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(195, 2468)
+
+[node name="Marker2D47" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(386, 2468)
+
+[node name="Marker2D48" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(578, 2466)
+
+[node name="Marker2D49" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(786, 2466)
+
+[node name="Marker2D50" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(98, 2642)
+
+[node name="Marker2D51" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(290, 2642)
+
+[node name="Marker2D52" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(482, 2642)
+
+[node name="Marker2D53" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(688, 2642)
+
+[node name="Marker2D54" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(890, 2642)
+
+[node name="Marker2D55" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(195, 2820)
+
+[node name="Marker2D56" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(386, 2820)
+
+[node name="Marker2D57" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(578, 2818)
+
+[node name="Marker2D58" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(786, 2818)
+
+[node name="Marker2D59" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(98, 2994)
+
+[node name="Marker2D60" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(290, 2994)
+
+[node name="Marker2D61" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(482, 2994)
+
+[node name="Marker2D62" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(688, 2994)
+
+[node name="Marker2D63" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(890, 2994)
+
+[node name="Marker2D64" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(195, 3172)
+
+[node name="Marker2D65" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(386, 3172)
+
+[node name="Marker2D66" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(578, 3170)
+
+[node name="Marker2D67" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(786, 3170)
+
+[node name="Marker2D68" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(98, 3346)
+
+[node name="Marker2D69" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(290, 3346)
+
+[node name="Marker2D70" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(482, 3346)
+
+[node name="Marker2D71" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(688, 3346)
+
+[node name="Marker2D72" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(890, 3346)
+
+[node name="Marker2D73" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(201, 3704)
+
+[node name="Marker2D74" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(392, 3704)
+
+[node name="Marker2D75" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(584, 3702)
+
+[node name="Marker2D76" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(792, 3702)
+
+[node name="Marker2D77" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(104, 3878)
+
+[node name="Marker2D78" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(296, 3878)
+
+[node name="Marker2D79" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(488, 3878)
+
+[node name="Marker2D80" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(694, 3878)
+
+[node name="Marker2D81" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(896, 3878)
+
+[node name="Marker2D82" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(195, 4060)
+
+[node name="Marker2D83" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(386, 4060)
+
+[node name="Marker2D84" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(578, 4058)
+
+[node name="Marker2D85" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(786, 4058)
+
+[node name="Marker2D86" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(98, 4234)
+
+[node name="Marker2D87" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(290, 4234)
+
+[node name="Marker2D88" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(482, 4234)
+
+[node name="Marker2D89" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(688, 4234)
+
+[node name="Marker2D90" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(890, 4234)
+
+[node name="Marker2D91" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(195, 4412)
+
+[node name="Marker2D92" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(386, 4412)
+
+[node name="Marker2D93" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(578, 4410)
+
+[node name="Marker2D94" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(786, 4410)
+
+[node name="Marker2D95" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(98, 4586)
+
+[node name="Marker2D96" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(290, 4586)
+
+[node name="Marker2D97" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(482, 4586)
+
+[node name="Marker2D98" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(688, 4586)
+
+[node name="Marker2D99" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(890, 4586)
+
+[node name="Marker2D100" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(195, 4764)
+
+[node name="Marker2D101" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(386, 4764)
+
+[node name="Marker2D102" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(578, 4762)
+
+[node name="Marker2D103" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(786, 4762)
+
+[node name="Marker2D104" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(98, 4938)
+
+[node name="Marker2D105" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(290, 4938)
+
+[node name="Marker2D106" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(482, 4938)
+
+[node name="Marker2D107" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(688, 4938)
+
+[node name="Marker2D108" type="Marker2D" parent="BalloonLocations"]
+position = Vector2(890, 4938)
+
 [node name="Balloons" type="Node2D" parent="."]
-
-[node name="Bumper" parent="." instance=ExtResource("5_ltrgl")]
-position = Vector2(614, 281)
-launch_power = 5
-
-[node name="Bumper2" parent="." instance=ExtResource("5_ltrgl")]
-position = Vector2(424, 277)
-launch_power = 5
-
-[node name="Bumper3" parent="." instance=ExtResource("5_ltrgl")]
-position = Vector2(831, 216)
-launch_power = 5
 
 [node name="Boundaries" type="Node2D" parent="."]
 
@@ -305,6 +709,32 @@ position = Vector2(401, 110)
 [node name="Bubble_Blower" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("7_7ms01")]
 Target = NodePath("../Player")
 blowing_power = 5.0
+
+[node name="Bumpers" type="Node2D" parent="."]
+
+[node name="Bumper" parent="Bumpers" instance=ExtResource("5_ltrgl")]
+position = Vector2(292, 882)
+launch_power = 100.0
+
+[node name="Bumper2" parent="Bumpers" instance=ExtResource("5_ltrgl")]
+position = Vector2(572, 1414)
+launch_power = 100.0
+
+[node name="Bumper3" parent="Bumpers" instance=ExtResource("5_ltrgl")]
+position = Vector2(292, 2466)
+launch_power = 100.0
+
+[node name="Bumper4" parent="Bumpers" instance=ExtResource("5_ltrgl")]
+position = Vector2(572, 2998)
+launch_power = 100.0
+
+[node name="Bumper5" parent="Bumpers" instance=ExtResource("5_ltrgl")]
+position = Vector2(292, 4058)
+launch_power = 100.0
+
+[node name="Bumper6" parent="Bumpers" instance=ExtResource("5_ltrgl")]
+position = Vector2(572, 4590)
+launch_power = 100.0
 
 [connection signal="body_entered" from="Boundaries/Boundary1" to="." method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Boundaries/Boundary2" to="." method="_on_boundary_body_entered"]

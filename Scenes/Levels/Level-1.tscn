@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://kwq6ink7ngo7"]
+[gd_scene load_steps=8 format=3 uid="uid://kwq6ink7ngo7"]
 
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
+[ext_resource type="Script" path="res://src/LevelLoad.gd" id="1_6uok5"]
 [ext_resource type="PackedScene" uid="uid://cc8v8mwusfupv" path="res://Scenes/MainUI.tscn" id="1_vcbb5"]
 [ext_resource type="PackedScene" uid="uid://d25suabu22l2f" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
@@ -10,6 +11,7 @@
 size = Vector2(100.721, 127.425)
 
 [node name="Level-1" type="Node2D"]
+script = ExtResource("1_6uok5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

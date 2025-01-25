@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ceeyc5blfe273" path="res://round boy.png" id="1_ydvoi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s3aon"]
-bounce = 0.89
+bounce = 14.19
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_at85y"]
 radius = 37.1214

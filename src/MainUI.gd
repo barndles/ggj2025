@@ -34,6 +34,7 @@ var bublinkoEscaped: Array[Array] = [
 ]
 
 func _ready() -> void:
+	RenderingServer.set_default_clear_color(Color(0, 0, 0, 1))
 	call_deferred("pivotFix")
 	var tween1: Tween = get_tree().create_tween()
 	tween1.tween_property($Fader, "color", Color(0, 0, 0, 0), 1)

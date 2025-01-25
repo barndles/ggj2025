@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://k6omtmylqahl"
-=======
-uid="uid://bpu4d7l1rdl6v"
->>>>>>> origin/barndles
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://ca5q34gfbvm4o"
+path="res://.godot/imported/it is i.png-ded8ee1f0510613fb23f3b9731c12ee0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://it is i.png"
+dest_files=["res://.godot/imported/it is i.png-ded8ee1f0510613fb23f3b9731c12ee0.ctex"]
 
 [params]
 
@@ -36,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -24,8 +24,6 @@ func spriteRotate() -> void:
 		tween.tween_property($Sprite2D, "rotation_degrees", -20, 3)
 	elif $Sprite2D.rotation_degrees == -20:
 		tween.tween_property($Sprite2D, "rotation_degrees", 20, 3)
-	else:
-		printerr("bad rotate")
 
 func _on_body_entered(body: RigidBody2D) -> void:
 	if body.name == "Player":
@@ -35,5 +33,6 @@ func _on_body_entered(body: RigidBody2D) -> void:
 		var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_parallel(true)
 		tween.tween_property($Sprite2D, "rotation_degrees", finalRotate.pick_random(), 0.5)
 		tween.tween_property($Sprite2D, "modulate", Color(1, 1, 1, 0), 0.5)
+		tween.tween_property($Sprite2D, "scale", Vector2(0.15, 0.15), 0.5)
 		await tween.finished
 		queue_free()

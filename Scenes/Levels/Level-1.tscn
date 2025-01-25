@@ -31,7 +31,6 @@ texture = ExtResource("1_4vo5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder/StaticBody2D"]
 position = Vector2(12.5902, 74.5662)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="RightBorder" type="Sprite2D" parent="."]
@@ -44,7 +43,6 @@ position = Vector2(-25.1799, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder/StaticBody2D"]
 position = Vector2(11.5408, 68.5716)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="Pins" type="Node2D" parent="."]

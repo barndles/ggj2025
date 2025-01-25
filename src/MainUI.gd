@@ -4,6 +4,7 @@ extends Control
 
 var intro: bool = true
 var introCount: int = 0
+var interrupted: bool = false
 
 var second: int = 0
 var minute: int = 0
@@ -17,6 +18,12 @@ var bublinkoIntroPhrases: Array[Array] = [
 	["There are a few power-ups too, but those are for you to figure out what they will do.", 2],
 	["Again, don’t touch the balloon animals.", 2]
 	]
+
+var bublinkoInterrupted: Array[Array] = [
+	["Ok fine, ignore my instructions, you're on your own.", 2],
+	["NO! STOP! Don't touch those! They're BAD!", 2],
+	["...you're not very patient, are you?", 2]
+]
 
 func _ready() -> void:
 	bublinkoRotate()
@@ -41,7 +48,7 @@ func bublinkoRotate() -> void:
 
 func _on_intro_phrase_timer_timeout() -> void:
 	introCount += 1
-	if bublinkoIntroPhrases.size() >= introCount:
+	if not interrupted and bublinkoIntroPhrases.size() >= introCount:
 		bublinkoSpeak(bublinkoIntroPhrases[introCount])
 
 func bublinkoSpeak(phrase: Array) -> void:
@@ -53,3 +60,8 @@ func bublinkoSpeak(phrase: Array) -> void:
 
 func bublinkoText(text: String) -> void:
 	$BublinkoText.text = text
+
+func introInterrupt(): # if player collects animals while bublinko is still speaking
+	interrupted = true
+	bublinkoSpeak(bublinkoInterrupted.pick_random())
+	

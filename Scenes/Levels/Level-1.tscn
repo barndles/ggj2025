@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://cc8v8mwusfupv" path="res://Scenes/MainUI.tscn" id="1_vcbb5"]
 [ext_resource type="PackedScene" uid="uid://po8yex8gsy5p" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
-<<<<<<< HEAD
+
 [ext_resource type="PackedScene" path="res://Scenes/Bumpers/Bumper.tscn" id="5_ltrgl"]
 [ext_resource type="PackedScene" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
 [ext_resource type="PackedScene" uid="uid://digkpchiqe7vc" path="res://Scenes/Fire.tscn" id="8_k8p4a"]
-=======
+
 [ext_resource type="PackedScene" uid="uid://1pfvkrfrc04i" path="res://Scenes/Bumpers/Bumper.tscn" id="5_ltrgl"]
 [ext_resource type="PackedScene" uid="uid://b68hqpn7toado" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
->>>>>>> a746320f14637c3fa518ceee149f431a2ed72a23
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
 size = Vector2(98.6224, 413.01)

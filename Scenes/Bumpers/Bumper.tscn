@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://1pfvkrfrc04i"]
+[gd_scene load_steps=7 format=3 uid="uid://d18dtbptju8jk"]
 
 [ext_resource type="Script" path="res://Scenes/Bumpers/bumper.gd" id="1_ffb7g"]
 [ext_resource type="Texture2D" uid="uid://ebif31bmap1f" path="res://Art/Entities/Bumper.png" id="2_3he4v"]

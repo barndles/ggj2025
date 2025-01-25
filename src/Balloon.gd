@@ -14,6 +14,7 @@ func _ready() -> void:
 	balloon_sprite.texture = Balloon_Animals.pick_random()
 	
 	var startRotate: Array = [20, -20]
+	$Sprite2D.set_texture(load("res://gfx/balloon/balloon" + str(random.randi_range(1, 3)) + ".png"))
 	$Sprite2D.rotation_degrees = startRotate.pick_random()
 	spriteRotate()
 

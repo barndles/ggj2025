@@ -102,5 +102,5 @@ func playerEscape() -> void: # if player escapes the board
 	var phrase: Array = bublinkoEscaped.pick_random()
 	interrupted = true
 	bublinkoSpeak(phrase)
-	await get_tree().create_timer(phrase[1]).timeout
+	await get_tree().create_timer(phrase[1] - 0.25).timeout
 	get_tree().quit()

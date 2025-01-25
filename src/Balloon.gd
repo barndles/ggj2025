@@ -1,12 +1,18 @@
 extends Area2D
 
+@export var Balloon_Animals:Array[Texture2D]
+
 @onready var level: Node2D = get_tree().get_root().get_node("Level-1")
 @onready var mainUI: Control = level.get_node("CanvasLayer/MainUI")
 @onready var player: RigidBody2D = level.get_node("Player")
+@onready var balloon_sprite: Sprite2D = $Sprite2D
 
 @onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	
+	balloon_sprite.texture = Balloon_Animals.pick_random()
+	
 	var startRotate: Array = [20, -20]
 	$Sprite2D.set_texture(load("res://gfx/balloon/balloon" + str(random.randi_range(1, 4)) + ".png"))
 	$Sprite2D.rotation_degrees = startRotate.pick_random()

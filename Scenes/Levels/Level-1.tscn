@@ -13,6 +13,7 @@ size = Vector2(100.721, 127.425)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainUI" parent="CanvasLayer" instance=ExtResource("1_vcbb5")]
+anchors_preset = 15
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(18, 1105)

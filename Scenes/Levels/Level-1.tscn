@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kwq6ink7ngo7"]
+[gd_scene load_steps=10 format=3 uid="uid://kwq6ink7ngo7"]
 
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
 [ext_resource type="Script" path="res://src/LevelLoad.gd" id="1_6uok5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://po8yex8gsy5p" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
 [ext_resource type="PackedScene" uid="uid://1pfvkrfrc04i" path="res://Scenes/Bumpers/Bumper.tscn" id="5_ltrgl"]
+[ext_resource type="PackedScene" uid="uid://b68hqpn7toado" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
 size = Vector2(100.721, 127.425)
@@ -268,15 +269,15 @@ position = Vector2(890, 1762)
 
 [node name="Bumper" parent="." instance=ExtResource("5_ltrgl")]
 position = Vector2(614, 281)
-launch_power = 1000
+launch_power = 5
 
 [node name="Bumper2" parent="." instance=ExtResource("5_ltrgl")]
 position = Vector2(424, 277)
-launch_power = 1000
+launch_power = 5
 
 [node name="Bumper3" parent="." instance=ExtResource("5_ltrgl")]
 position = Vector2(831, 216)
-launch_power = 1000
+launch_power = 5
 
 [node name="Boundaries" type="Node2D" parent="."]
 
@@ -300,6 +301,10 @@ shape = SubResource("RectangleShape2D_ybqlw")
 
 [node name="Player" parent="." instance=ExtResource("3_x2ajm")]
 position = Vector2(401, 110)
+
+[node name="Bubble_Blower" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("7_7ms01")]
+Target = NodePath("../Player")
+blowing_power = 5.0
 
 [connection signal="body_entered" from="Boundaries/Boundary1" to="." method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Boundaries/Boundary2" to="." method="_on_boundary_body_entered"]

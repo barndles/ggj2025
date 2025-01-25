@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://be6p3tk3lo7m7"]
+[gd_scene load_steps=4 format=3 uid="uid://be6p3tk3lo7m7"]
 
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="1_jh4i8"]
+[ext_resource type="PackedScene" uid="uid://d25suabu22l2f" path="res://Scenes/Bumpers/Pin.tscn" id="2_1yodp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nd06c"]
 radius = 24.1661
@@ -16,8 +17,4 @@ position = Vector2(518, 83)
 position = Vector2(577, 291)
 shape = SubResource("CircleShape2D_nd06c")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(322, 234)
-shape = SubResource("CircleShape2D_nd06c")
+[node name="Pin" parent="." instance=ExtResource("2_1yodp")]

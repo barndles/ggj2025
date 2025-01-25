@@ -6,7 +6,7 @@
 bounce = 0.89
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_at85y"]
-radius = 73.8241
+radius = 37.1214
 
 [node name="Player" type="Node2D"]
 
@@ -17,5 +17,5 @@ physics_material_override = SubResource("PhysicsMaterial_s3aon")
 shape = SubResource("CircleShape2D_at85y")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-scale = Vector2(0.291755, 0.291755)
+scale = Vector2(0.147991, 0.147992)
 texture = ExtResource("1_xsowl")

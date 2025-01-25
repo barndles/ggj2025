@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://kwq6ink7ngo7"]
+[gd_scene load_steps=9 format=3 uid="uid://kwq6ink7ngo7"]
 
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
+[ext_resource type="Script" path="res://src/LevelLoad.gd" id="1_6uok5"]
 [ext_resource type="PackedScene" uid="uid://cc8v8mwusfupv" path="res://Scenes/MainUI.tscn" id="1_vcbb5"]
 [ext_resource type="PackedScene" uid="uid://po8yex8gsy5p" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
@@ -9,7 +10,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
 size = Vector2(100.721, 127.425)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybqlw"]
+size = Vector2(54, 530)
+
 [node name="Level-1" type="Node2D"]
+script = ExtResource("1_6uok5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -259,17 +264,42 @@ position = Vector2(688, 1762)
 [node name="Marker2D36" type="Marker2D" parent="BalloonLocations"]
 position = Vector2(890, 1762)
 
+[node name="Balloons" type="Node2D" parent="."]
+
 [node name="Bumper" parent="." instance=ExtResource("5_ltrgl")]
-position = Vector2(477, 357)
+position = Vector2(614, 281)
 launch_power = 1000
 
 [node name="Bumper2" parent="." instance=ExtResource("5_ltrgl")]
-position = Vector2(287, 353)
+position = Vector2(424, 277)
 launch_power = 1000
 
 [node name="Bumper3" parent="." instance=ExtResource("5_ltrgl")]
-position = Vector2(694, 292)
+position = Vector2(831, 216)
 launch_power = 1000
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Boundary1" type="Area2D" parent="Boundaries"]
+position = Vector2(2, -520)
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary1"]
+position = Vector2(-37, 255)
+shape = SubResource("RectangleShape2D_ybqlw")
+
+[node name="Boundary2" type="Area2D" parent="Boundaries"]
+position = Vector2(1014, -529)
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary2"]
+position = Vector2(29, 264)
+shape = SubResource("RectangleShape2D_ybqlw")
 
 [node name="Player" parent="." instance=ExtResource("3_x2ajm")]
 position = Vector2(401, 110)
+
+[connection signal="body_entered" from="Boundaries/Boundary1" to="." method="_on_boundary_body_entered"]
+[connection signal="body_entered" from="Boundaries/Boundary2" to="." method="_on_boundary_body_entered"]

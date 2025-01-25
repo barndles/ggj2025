@@ -6,6 +6,7 @@ var intro: bool = true
 var introCount: int = 0
 var interrupted: bool = false
 
+var score: int = 0
 var second: int = 0
 var minute: int = 0
 

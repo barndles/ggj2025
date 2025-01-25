@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://0ukui11ue50k"]
+[gd_scene load_steps=5 format=3 uid="uid://0ukui11ue50k"]
 
 [ext_resource type="Script" path="res://src/MainMenu.gd" id="1_yplhy"]
+[ext_resource type="AudioStream" uid="uid://crp2pdvclqgeu" path="res://sfx/music/funky.ogg" id="2_2jlwo"]
+[ext_resource type="Texture2D" uid="uid://c3o8y3nl85dmg" path="res://gfx/SkyGradient.png" id="2_jg0wm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct83y"]
+size = Vector2(26, 778)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +15,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yplhy")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sky" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -768.0
+offset_right = 512.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_jg0wm")
+expand_mode = 1
+
+[node name="Clouds" type="Node2D" parent="Background"]
+unique_name_in_owner = true
+
+[node name="Boundary1" type="Area2D" parent="Background"]
+position = Vector2(-288, 0)
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boundary1"]
+position = Vector2(3, 379)
+shape = SubResource("RectangleShape2D_ct83y")
+
+[node name="Boundary2" type="Area2D" parent="Background"]
+position = Vector2(1312, 10)
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boundary2"]
+position = Vector2(3, 379)
+shape = SubResource("RectangleShape2D_ct83y")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -55,6 +104,7 @@ theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
 [node name="Fader" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,5 +114,13 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2jlwo")
+pitch_scale = 1.25
+autoplay = true
+parameters/looping = true
+
+[connection signal="area_entered" from="Background/Boundary1" to="." method="_on_boundary_area_entered"]
+[connection signal="area_entered" from="Background/Boundary2" to="." method="_on_boundary_area_entered"]
 [connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]

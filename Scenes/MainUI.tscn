@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc8v8mwusfupv"]
 
 [ext_resource type="Script" path="res://src/MainUI.gd" id="1_0om4u"]
-[ext_resource type="Texture2D" uid="uid://ceeyc5blfe273" path="res://round boy.png" id="2_gjja7"]
+[ext_resource type="Texture2D" uid="uid://bhrnfs1q8v02l" path="res://gfx/bublinko/happy.png" id="2_gqxed"]
 [ext_resource type="FontFile" uid="uid://dvwsl4rd8e5rt" path="res://gfx/fonts/SuperBakery.ttf" id="3_hxwla"]
 
 [node name="MainUI" type="Control"]
@@ -23,7 +23,7 @@ dragger_visibility = 1
 [node name="Bublinko" type="TextureRect" parent="BublinkoContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_gjja7")
+texture = ExtResource("2_gqxed")
 expand_mode = 3
 stretch_mode = 5
 

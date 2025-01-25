@@ -42,6 +42,68 @@ expand_mode = 1
 [node name="Clouds" type="Node2D" parent="Background"]
 unique_name_in_owner = true
 
+[node name="BubbleSpawn" type="Node2D" parent="Background"]
+unique_name_in_owner = true
+
+[node name="Left" type="Node2D" parent="Background/BubbleSpawn"]
+
+[node name="Marker2D" type="Marker2D" parent="Background/BubbleSpawn/Left"]
+position = Vector2(-128, 128)
+
+[node name="Marker2D2" type="Marker2D" parent="Background/BubbleSpawn/Left"]
+position = Vector2(-128, 416)
+
+[node name="Marker2D3" type="Marker2D" parent="Background/BubbleSpawn/Left"]
+position = Vector2(-128, 704)
+
+[node name="Right" type="Node2D" parent="Background/BubbleSpawn"]
+
+[node name="Marker2D3" type="Marker2D" parent="Background/BubbleSpawn/Right"]
+position = Vector2(1152, 128)
+
+[node name="Marker2D4" type="Marker2D" parent="Background/BubbleSpawn/Right"]
+position = Vector2(1152, 384)
+
+[node name="Marker2D5" type="Marker2D" parent="Background/BubbleSpawn/Right"]
+position = Vector2(1152, 704)
+
+[node name="Top" type="Node2D" parent="Background/BubbleSpawn"]
+
+[node name="Marker2D5" type="Marker2D" parent="Background/BubbleSpawn/Top"]
+position = Vector2(128, -64)
+
+[node name="Marker2D6" type="Marker2D" parent="Background/BubbleSpawn/Top"]
+position = Vector2(320, -64)
+
+[node name="Marker2D7" type="Marker2D" parent="Background/BubbleSpawn/Top"]
+position = Vector2(512, -64)
+
+[node name="Marker2D8" type="Marker2D" parent="Background/BubbleSpawn/Top"]
+position = Vector2(704, -64)
+
+[node name="Marker2D9" type="Marker2D" parent="Background/BubbleSpawn/Top"]
+position = Vector2(888, -64)
+
+[node name="Bottom" type="Node2D" parent="Background/BubbleSpawn"]
+
+[node name="Marker2D9" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
+position = Vector2(128, 832)
+
+[node name="Marker2D10" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
+position = Vector2(312, 832)
+
+[node name="Marker2D11" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
+position = Vector2(512, 832)
+
+[node name="Marker2D12" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
+position = Vector2(704, 832)
+
+[node name="Marker2D13" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
+position = Vector2(888, 832)
+
+[node name="Bubbles" type="Node2D" parent="Background"]
+unique_name_in_owner = true
+
 [node name="Boundary1" type="Area2D" parent="Background"]
 position = Vector2(-512, 0)
 input_pickable = false

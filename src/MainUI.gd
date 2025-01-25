@@ -15,7 +15,7 @@ var bublinkoIntroPhrases: Array[Array] = [
 	["My name is Mr. Bublinko, and I am your friendly neighborhood bubble man.", 3],
 	["That little ball is you. Don’t stress yourself out about it. If the ball goes in a direction you don’t like, shake your mouse to send it the other way.", 3],
 	["See those balloon animals? Don’t touch those, or you’ll lose points.", 3],
-	["Like, just to make sure, please don’t touch them.", 2],
+	["Like, please don’t touch them.", 2],
 	["There are a few power-ups too, those are for you to figure out what they do.", 3],
 	["Again, don’t touch the balloon animals.", 2]
 	]
@@ -79,6 +79,7 @@ func _on_intro_phrase_timer_timeout() -> void:
 		if bublinkoIntroPhrases.size() - 1 >= introCount:
 			bublinkoSpeak(bublinkoIntroPhrases[introCount])
 		else:
+			intro = false
 			%BublinkoText.text = ""
 
 func bublinkoSpeak(phrase: Array) -> void:

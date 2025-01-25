@@ -1,6 +1,7 @@
 extends Control
 
 @onready var cloudScene: PackedScene = preload("res://Scenes/Cloud.tscn")
+@onready var bubbleScene: PackedScene = preload("res://Scenes/Bubble.tscn")
 
 @onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -12,8 +13,44 @@ func _ready() -> void:
 		%Clouds.add_child(cloud)
 		cloud.owner = %Clouds
 		cloudCount += 1
+	var bubbleCount: int = 0
+	while bubbleCount < 30:
+		var bubble: RigidBody2D = bubbleScene.instantiate()
+		var spawnParent: Node2D = %BubbleSpawn.get_children().pick_random()
+		bubble.global_position = spawnParent.get_children().pick_random().global_position
+		match spawnParent.name:
+			"Left":
+				bubble.apply_impulse(Vector2(random.randi_range(100, 300), random.randi_range(-100, -300)))
+			"Right":
+				bubble.apply_impulse(Vector2(random.randi_range(-100, -300), random.randi_range(-100, -300)))
+			"Top":
+				bubble.apply_impulse(Vector2(random.randi_range(50, 100), random.randi_range(0, 10)))
+			"Bottom":
+				bubble.apply_impulse(Vector2(random.randi_range(50, 100), random.randi_range(-100, -300)))
+		%Bubbles.add_child(bubble)
+		bubble.owner = %Bubbles
+		bubbleCount += 1
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($Fader, "color", Color(0, 0, 0, 0), 1)
+
+func makeBubbles() -> void:
+	var bubbleCount: int = 0
+	while bubbleCount < 30:
+		var bubble: RigidBody2D = bubbleScene.instantiate()
+		var spawnParent: Node2D = %BubbleSpawn.get_children().pick_random()
+		bubble.global_position = spawnParent.get_children().pick_random().global_position
+		match spawnParent.name:
+			"Left":
+				bubble.apply_impulse(Vector2(random.randi_range(100, 300), random.randi_range(-100, -300)))
+			"Right":
+				bubble.apply_impulse(Vector2(random.randi_range(-100, -300), random.randi_range(-100, -300)))
+			"Top":
+				bubble.apply_impulse(Vector2(random.randi_range(50, 100), random.randi_range(0, 10)))
+			"Bottom":
+				bubble.apply_impulse(Vector2(random.randi_range(50, 100), random.randi_range(-100, -300)))
+		%Bubbles.add_child(bubble)
+		bubble.owner = %Bubbles
+		bubbleCount += 1
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

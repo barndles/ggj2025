@@ -49,58 +49,58 @@ unique_name_in_owner = true
 [node name="Left" type="Node2D" parent="Background/BubbleSpawn"]
 
 [node name="Marker2D" type="Marker2D" parent="Background/BubbleSpawn/Left"]
-position = Vector2(-128, 128)
+position = Vector2(-302, 122)
 
 [node name="Marker2D2" type="Marker2D" parent="Background/BubbleSpawn/Left"]
-position = Vector2(-128, 416)
+position = Vector2(-302, 410)
 
 [node name="Marker2D3" type="Marker2D" parent="Background/BubbleSpawn/Left"]
-position = Vector2(-128, 704)
+position = Vector2(-302, 698)
 
 [node name="Right" type="Node2D" parent="Background/BubbleSpawn"]
 
 [node name="Marker2D3" type="Marker2D" parent="Background/BubbleSpawn/Right"]
-position = Vector2(1152, 128)
+position = Vector2(1346, 138)
 
 [node name="Marker2D4" type="Marker2D" parent="Background/BubbleSpawn/Right"]
-position = Vector2(1152, 384)
+position = Vector2(1346, 394)
 
 [node name="Marker2D5" type="Marker2D" parent="Background/BubbleSpawn/Right"]
-position = Vector2(1152, 704)
+position = Vector2(1346, 714)
 
 [node name="Top" type="Node2D" parent="Background/BubbleSpawn"]
 
 [node name="Marker2D5" type="Marker2D" parent="Background/BubbleSpawn/Top"]
-position = Vector2(128, -64)
+position = Vector2(130, -206)
 
 [node name="Marker2D6" type="Marker2D" parent="Background/BubbleSpawn/Top"]
-position = Vector2(320, -64)
+position = Vector2(322, -206)
 
 [node name="Marker2D7" type="Marker2D" parent="Background/BubbleSpawn/Top"]
-position = Vector2(512, -64)
+position = Vector2(514, -206)
 
 [node name="Marker2D8" type="Marker2D" parent="Background/BubbleSpawn/Top"]
-position = Vector2(704, -64)
+position = Vector2(706, -206)
 
 [node name="Marker2D9" type="Marker2D" parent="Background/BubbleSpawn/Top"]
-position = Vector2(888, -64)
+position = Vector2(890, -206)
 
 [node name="Bottom" type="Node2D" parent="Background/BubbleSpawn"]
 
 [node name="Marker2D9" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
-position = Vector2(128, 832)
+position = Vector2(130, 978)
 
 [node name="Marker2D10" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
-position = Vector2(312, 832)
+position = Vector2(314, 978)
 
 [node name="Marker2D11" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
-position = Vector2(512, 832)
+position = Vector2(514, 978)
 
 [node name="Marker2D12" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
-position = Vector2(704, 832)
+position = Vector2(706, 978)
 
 [node name="Marker2D13" type="Marker2D" parent="Background/BubbleSpawn/Bottom"]
-position = Vector2(888, 832)
+position = Vector2(890, 978)
 
 [node name="Bubbles" type="Node2D" parent="Background"]
 unique_name_in_owner = true
@@ -137,6 +137,7 @@ offset_top = 104.0
 offset_right = 473.0
 offset_bottom = 150.0
 grow_horizontal = 2
+pivot_offset = Vector2(472, 88)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_lqh8o")
@@ -147,6 +148,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RotateTimer" type="Timer" parent="Title"]
+unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
@@ -195,5 +197,6 @@ parameters/looping = true
 [connection signal="area_entered" from="Background/Boundary1" to="." method="_on_boundary_area_entered"]
 [connection signal="area_entered" from="Background/Boundary2" to="." method="_on_boundary_area_entered"]
 [connection signal="timeout" from="Background/BubbleTimer" to="." method="_on_bubble_timer_timeout"]
+[connection signal="timeout" from="Title/RotateTimer" to="." method="_on_rotate_timer_timeout"]
 [connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]

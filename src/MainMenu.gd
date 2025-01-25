@@ -6,6 +6,8 @@ extends Control
 @onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	$Title.rotation_degrees = -10
+	rotateTitle()
 	var cloudCount: int = 0
 	while cloudCount < 16:
 		var cloud: Area2D = cloudScene.instantiate()
@@ -41,6 +43,14 @@ func makeBubbles(bubbles: int) -> void:
 
 func _on_bubble_timer_timeout() -> void:
 	makeBubbles(random.randi_range(30, 50))
+
+func rotateTitle() -> void:
+	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($Title, "rotation_degrees", $Title.rotation_degrees * -1, 3)
+	%RotateTimer.start()
+
+func _on_rotate_timer_timeout() -> void:
+	rotateTitle()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

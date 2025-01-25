@@ -6,8 +6,7 @@
 [node name="MainUI" type="Control"]
 layout_mode = 3
 anchor_right = 1.0
-anchor_bottom = 1.185
-offset_bottom = -0.0800781
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0om4u")
@@ -37,19 +36,22 @@ offset_right = 480.0
 offset_bottom = 168.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
-text = "hey its me mistah bublinko da bubl blowa"
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -34.0
-offset_right = 90.0
+offset_left = 8.0
+offset_top = -48.0
+offset_right = 128.0
+offset_bottom = -8.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Score: 0"
+vertical_alignment = 2
 
 [node name="Timer" type="Label" parent="."]
 layout_mode = 1
@@ -58,13 +60,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -61.0
-offset_top = -34.0
+offset_left = -128.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "00:00"
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="BalloonContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -84,5 +89,10 @@ alignment = 1
 [node name="GameTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="IntroPhraseTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="Bublinko/RotateTimer" to="." method="_on_rotate_timer_timeout"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="IntroPhraseTimer" to="." method="_on_intro_phrase_timer_timeout"]

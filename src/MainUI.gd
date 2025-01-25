@@ -2,14 +2,32 @@ extends Control
 
 @onready var random: RandomNumberGenerator = RandomNumberGenerator.new()
 
+var intro: bool = true
+var introCount: int = 0
+var interrupted: bool = false
+
 var second: int = 0
 var minute: int = 0
 
-var phrases: Array[Array] = [[]]
+var bublinkoIntroPhrases: Array[Array] = [
+	["Welcome to MR BUBLINKO'S BIG BEAUTIFUL PACHINKO BALLAPALOOZA.", 2],
+	["My name is Mr. Bublinko, and I am your friendly neighborhood bubble man.", 2],
+	["That little ball is you. Don’t stress yourself out about it. If the ball goes in a direction you don’t like, shake your mouse to send it the other direction.", 2],
+	["See those balloon animals? Don’t touch those, you’ll lose points.", 2],
+	["Like just to make sure I said it, please don’t touch them.", 2],
+	["There are a few power-ups too, but those are for you to figure out what they will do.", 2],
+	["Again, don’t touch the balloon animals.", 2]
+	]
+
+var bublinkoInterrupted: Array[Array] = [
+	["Ok fine, ignore my instructions, you're on your own.", 2],
+	["NO! STOP! Don't touch those! They're BAD!", 2],
+	["...you're not very patient, are you?", 2]
+]
 
 func _ready() -> void:
 	bublinkoRotate()
-	bublinkoSpeak()
+	bublinkoSpeak(bublinkoIntroPhrases[introCount])
 
 func _on_game_timer_timeout() -> void:
 	if second + 1 == 60:
@@ -28,9 +46,22 @@ func bublinkoRotate() -> void:
 	tween.tween_property($Bublinko, "rotation_degrees", random.randi_range(-50, 50), %RotateTimer.wait_time)
 	%RotateTimer.start()
 
-func bublinkoSpeak() -> void:
+func _on_intro_phrase_timer_timeout() -> void:
+	introCount += 1
+	if not interrupted and bublinkoIntroPhrases.size() >= introCount:
+		bublinkoSpeak(bublinkoIntroPhrases[introCount])
+
+func bublinkoSpeak(phrase: Array) -> void:
 	var tween = create_tween()
-	tween.tween_method(bublinkoText, "", "hey its me mistah bublinko da bubl blowa", 1).set_delay(2)
+	if intro:
+		tween.tween_method(bublinkoText, "", phrase[0], phrase[1])
+		await tween.finished
+		$IntroPhraseTimer.start()
 
 func bublinkoText(text: String) -> void:
 	$BublinkoText.text = text
+
+func introInterrupt(): # if player collects animals while bublinko is still speaking
+	interrupted = true
+	bublinkoSpeak(bublinkoInterrupted.pick_random())
+	

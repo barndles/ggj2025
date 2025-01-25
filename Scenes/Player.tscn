@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbonpx8nhww5l"]
+[gd_scene load_steps=5 format=3 uid="uid://cbonpx8nhww5l"]
 
 [ext_resource type="Texture2D" uid="uid://dj2g6xcjxqa1s" path="res://Art/Entities/Player.png" id="1_71lud"]
+[ext_resource type="Script" path="res://Scenes/Mouse_Fan.gd" id="1_cb0sv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s3aon"]
 bounce = 14.19
@@ -10,6 +11,7 @@ radius = 37.1214
 
 [node name="Player" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_s3aon")
+script = ExtResource("1_cb0sv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_at85y")

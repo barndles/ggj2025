@@ -31,7 +31,8 @@ var bublinkoEscaped: Array[Array] = [
 	["Whoa.", 0.25],
 	["I meant to fix that, sorry.", 1],
 	["Whoops, my bad", 0.25],
-	["NO STOP YOU'RE GONNA BREAK IT GET BACK HERE NOOOOOOOOOOOO", 2]
+	["NO STOP YOU'RE GONNA BREAK IT GET BACK HERE NOOOOOOOOOOOO", 2],
+	["Gonna crash this game with NO SURVIVORS", 1]
 ]
 
 func _ready() -> void:

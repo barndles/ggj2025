@@ -14,28 +14,13 @@ func _ready() -> void:
 		cloud.owner = %Clouds
 		cloudCount += 1
 	var bubbleCount: int = 0
-	while bubbleCount < 30:
-		var bubble: RigidBody2D = bubbleScene.instantiate()
-		var spawnParent: Node2D = %BubbleSpawn.get_children().pick_random()
-		bubble.global_position = spawnParent.get_children().pick_random().global_position
-		match spawnParent.name:
-			"Left":
-				bubble.apply_impulse(Vector2(random.randi_range(100, 300), random.randi_range(-100, -300)))
-			"Right":
-				bubble.apply_impulse(Vector2(random.randi_range(-100, -300), random.randi_range(-100, -300)))
-			"Top":
-				bubble.apply_impulse(Vector2(random.randi_range(50, 100), random.randi_range(0, 10)))
-			"Bottom":
-				bubble.apply_impulse(Vector2(random.randi_range(50, 100), random.randi_range(-100, -300)))
-		%Bubbles.add_child(bubble)
-		bubble.owner = %Bubbles
-		bubbleCount += 1
+	makeBubbles(random.randi_range(30, 50))
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($Fader, "color", Color(0, 0, 0, 0), 1)
 
-func makeBubbles() -> void:
+func makeBubbles(bubbles: int) -> void:
 	var bubbleCount: int = 0
-	while bubbleCount < 30:
+	while bubbleCount < bubbles:
 		var bubble: RigidBody2D = bubbleScene.instantiate()
 		var spawnParent: Node2D = %BubbleSpawn.get_children().pick_random()
 		bubble.global_position = spawnParent.get_children().pick_random().global_position
@@ -51,6 +36,11 @@ func makeBubbles() -> void:
 		%Bubbles.add_child(bubble)
 		bubble.owner = %Bubbles
 		bubbleCount += 1
+	%BubbleTimer.wait_time = random.randi_range(1, 3)
+	%BubbleTimer.start()
+
+func _on_bubble_timer_timeout() -> void:
+	makeBubbles(random.randi_range(30, 50))
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

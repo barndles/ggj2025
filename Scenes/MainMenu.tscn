@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://0ukui11ue50k"]
+[gd_scene load_steps=6 format=3 uid="uid://0ukui11ue50k"]
 
 [ext_resource type="Script" path="res://src/MainMenu.gd" id="1_yplhy"]
 [ext_resource type="AudioStream" uid="uid://crp2pdvclqgeu" path="res://sfx/music/funky.ogg" id="2_2jlwo"]
 [ext_resource type="Texture2D" uid="uid://c3o8y3nl85dmg" path="res://gfx/SkyGradient.png" id="2_jg0wm"]
+[ext_resource type="FontFile" uid="uid://dvwsl4rd8e5rt" path="res://gfx/fonts/SuperBakery.ttf" id="3_lqh8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct83y"]
 size = Vector2(26, 778)
@@ -122,6 +123,10 @@ monitorable = false
 position = Vector2(3, 379)
 shape = SubResource("RectangleShape2D_ct83y")
 
+[node name="BubbleTimer" type="Timer" parent="Background"]
+unique_name_in_owner = true
+autostart = true
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -134,11 +139,16 @@ offset_bottom = 150.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 33
+theme_override_fonts/font = ExtResource("3_lqh8o")
+theme_override_font_sizes/font_size = 72
 text = "MR BUBLINKO'S BIG BEAUTIFUL
 PACHINKO BALLAPALOOZA"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RotateTimer" type="Timer" parent="Title"]
+wait_time = 3.0
+autostart = true
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -184,5 +194,6 @@ parameters/looping = true
 
 [connection signal="area_entered" from="Background/Boundary1" to="." method="_on_boundary_area_entered"]
 [connection signal="area_entered" from="Background/Boundary2" to="." method="_on_boundary_area_entered"]
+[connection signal="timeout" from="Background/BubbleTimer" to="." method="_on_bubble_timer_timeout"]
 [connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]

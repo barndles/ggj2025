@@ -5,6 +5,7 @@ extends Control
 var intro: bool = true
 var introCount: int = 0
 var interrupted: bool = false
+var bublinkoAnger: int = 0
 
 var score: int = 0
 var second: int = 0
@@ -15,10 +16,10 @@ var bublinkoIntroPhrases: Array[Array] = [
 	["My name is Mr. Bublinko, and I am your friendly neighborhood bubble man.", 3],
 	["That little ball is you. Don’t stress yourself out about it. If the ball goes in a direction you don’t like, shake your mouse to send it the other way.", 3],
 	["See those balloon animals? Don’t touch those, or you’ll lose points.", 3],
-	["Like, please don’t touch them.", 2],
+	["Like, please don’t touch them.", 1],
 	["There are a few power-ups too, those are for you to figure out what they do.", 3],
 	["Again, don’t touch the balloon animals.", 2]
-	]
+]
 
 var bublinkoInterrupted: Array[Array] = [
 	["Ok fine, ignore my instructions, you're on your own.", 2],
@@ -33,6 +34,16 @@ var bublinkoEscaped: Array[Array] = [
 	["Whoops, my bad", 0.25],
 	["NO STOP YOU'RE GONNA BREAK IT GET BACK HERE NOOOOOOOOOOOO", 2],
 	["Gonna crash this game with NO SURVIVORS", 1]
+]
+
+var bublinkoCollect: Array[Array] = [
+	["Hey, I don’t know if you heard me the first time, which is okay, but please don’t touch the balloon animals.", 3],
+	["Hey buddy, it’s Mr. Bublinko again, I saw you touch one of those balloon animals. I guess you weren’t paying attention, but PLEASE don’t touch them.", 4],
+	["Alright, player, the joke's over, stop touching the balloon animals, you will continue to lose points if you do.", 3],
+	["Player, you're starting to make me really angry. Stop touching the balloon animals.", 3],
+	["I’m warning you, if you continue to touch those balloon animals, there are going to be consequences.", 3],
+	["Were instructions not clear enough to you? What did you not understand?? DON'T TOUCH THE BALLOON ANIMALS!", 3],
+	["COME ON MAN! YOU ARE CLEARLY NOT LISTENING! I’M TIRED OF WARNING YOU! ENOUGH!", 3]
 ]
 
 func _ready() -> void:
@@ -90,12 +101,16 @@ func bublinkoSpeak(phrase: Array) -> void:
 		await tween.finished
 		if not interrupted:
 			$IntroPhraseTimer.start()
+	else:
+		if bublinkoCollect.size() - 1 >= bublinkoAnger:
+			tween.tween_method(bublinkoText, "", bublinkoCollect[bublinkoAnger], phrase[1])
 
 func bublinkoText(text: String) -> void:
 	%BublinkoText.text = text
 
 func introInterrupt() -> void: # if player collects animals while bublinko is still speaking
 	interrupted = true
+	intro = false
 	bublinkoSpeak(bublinkoInterrupted.pick_random())
 
 func playerEscape() -> void: # if player escapes the board
@@ -104,3 +119,6 @@ func playerEscape() -> void: # if player escapes the board
 	bublinkoSpeak(phrase)
 	await get_tree().create_timer(phrase[1] - 0.25).timeout
 	get_tree().quit()
+
+func gameOver() -> void:
+	pass

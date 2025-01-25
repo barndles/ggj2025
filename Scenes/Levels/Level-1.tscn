@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kwq6ink7ngo7"]
+[gd_scene load_steps=11 format=3 uid="uid://kwq6ink7ngo7"]
 
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
 [ext_resource type="Script" path="res://src/LevelLoad.gd" id="1_6uok5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
 [ext_resource type="PackedScene" path="res://Scenes/Bumpers/Bumper.tscn" id="5_ltrgl"]
 [ext_resource type="PackedScene" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
+[ext_resource type="PackedScene" uid="uid://digkpchiqe7vc" path="res://Scenes/Fire.tscn" id="8_k8p4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
 size = Vector2(98.6224, 413.01)
@@ -733,6 +734,9 @@ launch_power = 100.0
 [node name="Bumper6" parent="Bumpers" instance=ExtResource("5_ltrgl")]
 position = Vector2(572, 4590)
 launch_power = 100.0
+
+[node name="Fire" parent="." instance=ExtResource("8_k8p4a")]
+position = Vector2(496, 19016)
 
 [connection signal="body_entered" from="Boundaries/Boundary1" to="." method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Boundaries/Boundary2" to="." method="_on_boundary_body_entered"]

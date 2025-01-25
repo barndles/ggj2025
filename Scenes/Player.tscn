@@ -21,7 +21,10 @@ position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.51282, 0.51282)
 texture = ExtResource("1_ydvoi")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
+limit_left = 0
+limit_right = 1080
 limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 20.0
 drag_vertical_enabled = true

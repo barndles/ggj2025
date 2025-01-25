@@ -34,15 +34,19 @@ var bublinkoEscaped: Array[Array] = [
 ]
 
 func _ready() -> void:
-	%Bublinko.pivot_offset = $Bublinko.size / 2
+	call_deferred("pivotFix")
 	var tween1: Tween = get_tree().create_tween()
-	tween1.tween_property($Fader, "color", Color(0, 0, 0, 1), 1)
+	tween1.tween_property($Fader, "color", Color(0, 0, 0, 0), 1)
 	await tween1.finished
 	var tween2: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING)
 	tween2.tween_property($BublinkoContainer, "position:y", 8, 0.75)
 	await tween2.finished
 	bublinkoRotate()
 	bublinkoSpeak(bublinkoIntroPhrases[introCount])
+
+func pivotFix() -> void:
+	await get_tree().process_frame
+	%Bublinko.pivot_offset = %Bublinko.size / 2
 
 func _input(_input: InputEvent) -> void:
 	if Input.is_action_just_pressed("debug_interrupt"):

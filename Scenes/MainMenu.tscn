@@ -43,7 +43,7 @@ expand_mode = 1
 unique_name_in_owner = true
 
 [node name="Boundary1" type="Area2D" parent="Background"]
-position = Vector2(-288, 0)
+position = Vector2(-512, 0)
 input_pickable = false
 monitorable = false
 
@@ -52,7 +52,7 @@ position = Vector2(3, 379)
 shape = SubResource("RectangleShape2D_ct83y")
 
 [node name="Boundary2" type="Area2D" parent="Background"]
-position = Vector2(1312, 10)
+position = Vector2(1616, 0)
 input_pickable = false
 monitorable = false
 

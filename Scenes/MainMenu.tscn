@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ukui11ue50k"]
+[gd_scene load_steps=8 format=3 uid="uid://0ukui11ue50k"]
 
 [ext_resource type="Script" path="res://src/MainMenu.gd" id="1_yplhy"]
 [ext_resource type="AudioStream" uid="uid://crp2pdvclqgeu" path="res://sfx/music/funky.ogg" id="2_2jlwo"]
 [ext_resource type="Texture2D" uid="uid://c3o8y3nl85dmg" path="res://gfx/SkyGradient.png" id="2_jg0wm"]
 [ext_resource type="FontFile" uid="uid://dvwsl4rd8e5rt" path="res://gfx/fonts/SuperBakery.ttf" id="3_lqh8o"]
+[ext_resource type="Texture2D" uid="uid://cdwr1ntlni2bw" path="res://gfx/buttons/Green.png" id="4_c15lc"]
+[ext_resource type="Texture2D" uid="uid://0qh2wdi877n1" path="res://gfx/buttons/Red.png" id="5_7642d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct83y"]
 size = Vector2(26, 778)
@@ -160,32 +162,61 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -192.0
-offset_top = -26.0
+offset_top = -55.5
 offset_right = 192.0
-offset_bottom = 27.0
+offset_bottom = 168.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Play" type="Button" parent="ButtonContainer"]
+[node name="Play" type="TextureRect" parent="ButtonContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.8, 0.8, 0.8, 1)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "PLAY"
+mouse_default_cursor_shape = 2
+texture = ExtResource("4_c15lc")
+expand_mode = 1
 
-[node name="Quit" type="Button" parent="ButtonContainer"]
+[node name="Label" type="Label" parent="ButtonContainer/Play"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 111.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_lqh8o")
+theme_override_font_sizes/font_size = 54
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureRect" parent="ButtonContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.8, 0.8, 0.8, 1)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+mouse_default_cursor_shape = 2
+texture = ExtResource("5_7642d")
+expand_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="ButtonContainer/Quit"]
+offset_right = 384.0
+offset_bottom = 111.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_lqh8o")
+theme_override_font_sizes/font_size = 54
 text = "QUIT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Fader" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -198,5 +229,9 @@ parameters/looping = true
 [connection signal="area_entered" from="Background/Boundary2" to="." method="_on_boundary_area_entered"]
 [connection signal="timeout" from="Background/BubbleTimer" to="." method="_on_bubble_timer_timeout"]
 [connection signal="timeout" from="Title/RotateTimer" to="." method="_on_rotate_timer_timeout"]
-[connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="gui_input" from="ButtonContainer/Play" to="." method="_on_play_gui_input"]
+[connection signal="mouse_entered" from="ButtonContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="gui_input" from="ButtonContainer/Quit" to="." method="_on_quit_gui_input"]
+[connection signal="mouse_entered" from="ButtonContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonContainer/Quit" to="." method="_on_quit_mouse_exited"]

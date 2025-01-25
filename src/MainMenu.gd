@@ -19,6 +19,8 @@ func _ready() -> void:
 	makeBubbles(random.randi_range(30, 50))
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($Fader, "color", Color(0, 0, 0, 0), 1)
+	await tween.finished
+	$Fader.visible = false
 
 func makeBubbles(bubbles: int) -> void:
 	var bubbleCount: int = 0
@@ -56,6 +58,7 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_play_pressed() -> void:
+	$Fader.visible = true
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($Fader, "color", Color(0, 0, 0, 1), 1)
 	await tween.finished
@@ -71,3 +74,33 @@ func _on_boundary_area_entered(area: Area2D) -> void:
 		%Clouds.add_child(cloud)
 		cloud.owner = %Clouds
 		area.queue_free()
+
+func _on_play_mouse_entered() -> void:
+	%Play.self_modulate = Color(1, 1, 1, 1)
+
+func _on_quit_mouse_entered() -> void:
+	%Quit.self_modulate = Color(1, 1, 1, 1)
+
+func _on_play_mouse_exited() -> void:
+	%Play.self_modulate = Color(0.8, 0.8, 0.8, 1)
+
+func _on_quit_mouse_exited() -> void:
+	%Quit.self_modulate = Color(0.8, 0.8, 0.8, 1)
+
+func _on_play_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == 1:
+			if event.pressed:
+				%Play.self_modulate = Color(0.6, 0.6, 0.6, 1)
+			else:
+				_on_play_mouse_exited()
+				_on_play_pressed()
+
+func _on_quit_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == 1:
+			if event.pressed:
+				%Quit.self_modulate = Color(0.6, 0.6, 0.6, 1)
+			else:
+				_on_quit_mouse_exited()
+				_on_quit_pressed()

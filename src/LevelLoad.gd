@@ -16,6 +16,7 @@ func _ready() -> void:
 		balloon.owner = get_node("Balloons")
 		spawnPosition.queue_free()
 		balloonCount += 1
+		await get_tree().create_timer(0.1).timeout
 
 func _on_boundary_body_entered(body: RigidBody2D) -> void:
 	if body == player:

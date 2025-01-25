@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://be6p3tk3lo7m7"]
+
+[ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="1_jh4i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nd06c"]
+radius = 24.1661
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_jh4i8")]
+position = Vector2(518, 83)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(577, 291)
+shape = SubResource("CircleShape2D_nd06c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(322, 234)
+shape = SubResource("CircleShape2D_nd06c")

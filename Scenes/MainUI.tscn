@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cc8v8mwusfupv"]
+[gd_scene load_steps=2 format=3 uid="uid://cc8v8mwusfupv"]
+
+[ext_resource type="Script" path="res://src/MainUI.gd" id="1_0om4u"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -8,8 +10,21 @@ offset_right = -0.128052
 offset_bottom = 0.119934
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0om4u")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Score: 9001"
+horizontal_alignment = 2
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

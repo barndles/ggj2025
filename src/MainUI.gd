@@ -9,4 +9,4 @@ func _on_game_timer_timeout() -> void:
 		second = 0
 	else:
 		second += 1
-	$Label.text = str("%0*d" % [2, minute]) + ":" + str("%0*d" % [2, second])
+	$Timer.text = str("%0*d" % [2, minute]) + ":" + str("%0*d" % [2, second])

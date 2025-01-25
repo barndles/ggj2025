@@ -8,7 +8,7 @@ extends Area2D
 
 func _ready() -> void:
 	var startRotate: Array = [20, -20]
-	$Sprite2D.set_texture(load("res://gfx/balloon/balloon" + str(random.randi_range(1, 2)) + ".png"))
+	$Sprite2D.set_texture(load("res://gfx/balloon/balloon" + str(random.randi_range(1, 3)) + ".png"))
 	$Sprite2D.rotation_degrees = startRotate.pick_random()
 	spriteRotate()
 

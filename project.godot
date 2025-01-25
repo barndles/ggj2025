@@ -14,6 +14,10 @@ config/name="Bubble"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GS="*res://src/GS.gd"
+
 [display]
 
 window/size/viewport_width=1024

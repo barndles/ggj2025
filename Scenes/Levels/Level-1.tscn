@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
 [ext_resource type="Script" path="res://src/LevelLoad.gd" id="1_6uok5"]
 [ext_resource type="PackedScene" uid="uid://cc8v8mwusfupv" path="res://Scenes/MainUI.tscn" id="1_vcbb5"]
-[ext_resource type="PackedScene" uid="uid://d25suabu22l2f" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
+[ext_resource type="PackedScene" uid="uid://po8yex8gsy5p" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
 [ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
-[ext_resource type="PackedScene" path="res://Scenes/Bumpers/Bumper.tscn" id="5_ltrgl"]
-[ext_resource type="PackedScene" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
+[ext_resource type="PackedScene" uid="uid://1pfvkrfrc04i" path="res://Scenes/Bumpers/Bumper.tscn" id="5_ltrgl"]
+[ext_resource type="PackedScene" uid="uid://b68hqpn7toado" path="res://Scenes/bubble_blower.tscn" id="7_7ms01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
 size = Vector2(98.6224, 413.01)

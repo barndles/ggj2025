@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbonpx8nhww5l"]
 
-[ext_resource type="Texture2D" uid="uid://ceeyc5blfe273" path="res://round boy.png" id="1_ydvoi"]
+[ext_resource type="Texture2D" uid="uid://dj2g6xcjxqa1s" path="res://Art/Entities/Player.png" id="1_71lud"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s3aon"]
 bounce = 14.19
@@ -16,8 +16,8 @@ shape = SubResource("CircleShape2D_at85y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1.90735e-06)
-scale = Vector2(0.51282, 0.51282)
-texture = ExtResource("1_ydvoi")
+scale = Vector2(0.0429687, 0.0429687)
+texture = ExtResource("1_71lud")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

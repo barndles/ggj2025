@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw6ieus8na8gn"]
+[gd_scene load_steps=4 format=3 uid="uid://cbonpx8nhww5l"]
 
 [ext_resource type="Texture2D" uid="uid://ceeyc5blfe273" path="res://round boy.png" id="1_ydvoi"]
 
@@ -20,3 +20,8 @@ shape = SubResource("CircleShape2D_at85y")
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.51282, 0.51282)
 texture = ExtResource("1_ydvoi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true

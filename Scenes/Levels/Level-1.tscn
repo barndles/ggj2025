@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
 [ext_resource type="PackedScene" uid="uid://cc8v8mwusfupv" path="res://Scenes/MainUI.tscn" id="1_vcbb5"]
 [ext_resource type="PackedScene" uid="uid://d25suabu22l2f" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
-[ext_resource type="PackedScene" uid="uid://bw6ieus8na8gn" path="res://Scenes/Player.tscn" id="3_x2ajm"]
+[ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8cai"]
 size = Vector2(100.721, 127.425)
@@ -23,7 +23,6 @@ texture = ExtResource("1_4vo5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
 position = Vector2(12.5902, 0.172501)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="Icon2" type="Sprite2D" parent="."]
@@ -36,7 +35,6 @@ position = Vector2(-25.1799, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon2/StaticBody2D"]
 position = Vector2(12.5902, 0.172501)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="Pin" parent="." instance=ExtResource("2_mf5l1")]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btavut8xm7cia"
-path="res://.godot/imported/balloon3.png-2cba9af001e153474f9ffa5885b93545.ctex"
+uid="uid://1fg2m4hj6q65"
+path="res://.godot/imported/Fire1.png-7b7ca557a0a3d545e5149c9381ab1f8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gfx/balloon/balloon3.png"
-dest_files=["res://.godot/imported/balloon3.png-2cba9af001e153474f9ffa5885b93545.ctex"]
+source_file="res://gfx/Fire1.png"
+dest_files=["res://.godot/imported/Fire1.png-7b7ca557a0a3d545e5149c9381ab1f8a.ctex"]
 
 [params]
 

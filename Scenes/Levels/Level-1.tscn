@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://kwq6ink7ngo7"]
+[gd_scene load_steps=5 format=3 uid="uid://kwq6ink7ngo7"]
 
 [ext_resource type="Texture2D" uid="uid://bfvrsw35aq80e" path="res://icon.svg" id="1_4vo5e"]
+[ext_resource type="PackedScene" uid="uid://cc8v8mwusfupv" path="res://Scenes/MainUI.tscn" id="1_vcbb5"]
 [ext_resource type="PackedScene" uid="uid://d25suabu22l2f" path="res://Scenes/Bumpers/Pin.tscn" id="2_mf5l1"]
-[ext_resource type="PackedScene" uid="uid://cbonpx8nhww5l" path="res://Scenes/Player.tscn" id="3_x2ajm"]
+[ext_resource type="PackedScene" uid="uid://bw6ieus8na8gn" path="res://Scenes/Player.tscn" id="3_x2ajm"]
 
 [node name="Level-1" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainUI" parent="CanvasLayer" instance=ExtResource("1_vcbb5")]
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(18, 1105)

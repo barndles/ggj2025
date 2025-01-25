@@ -12,10 +12,10 @@ var minute: int = 0
 var bublinkoIntroPhrases: Array[Array] = [
 	["Welcome to MR BUBLINKO'S BIG BEAUTIFUL PACHINKO BALLAPALOOZA.", 2],
 	["My name is Mr. Bublinko, and I am your friendly neighborhood bubble man.", 3],
-	["That little ball is you. Don’t stress yourself out about it. If the ball goes in a direction you don’t like, shake your mouse to send it the other direction.", 3],
-	["See those balloon animals? Don’t touch those, you’ll lose points.", 3],
-	["Like just to make sure I said it, please don’t touch them.", 2],
-	["There are a few power-ups too, but those are for you to figure out what they will do.", 3],
+	["That little ball is you. Don’t stress yourself out about it. If the ball goes in a direction you don’t like, shake your mouse to send it the other way.", 3],
+	["See those balloon animals? Don’t touch those, or you’ll lose points.", 3],
+	["Like, just to make sure, please don’t touch them.", 2],
+	["There are a few power-ups too, those are for you to figure out what they do.", 3],
 	["Again, don’t touch the balloon animals.", 2]
 	]
 
@@ -26,7 +26,7 @@ var bublinkoInterrupted: Array[Array] = [
 ]
 
 var bublinkoEscaped: Array[Array] = [
-	["...where'd you go?", 1],
+	["Hey, where'd you go?", 1],
 	["Whoa.", 0.25],
 	["I meant to fix that, sorry.", 1],
 	["Whoops, my bad", 0.25],
@@ -34,6 +34,13 @@ var bublinkoEscaped: Array[Array] = [
 ]
 
 func _ready() -> void:
+	%Bublinko.pivot_offset = $Bublinko.size / 2
+	var tween1: Tween = get_tree().create_tween()
+	tween1.tween_property($Fader, "color", Color(0, 0, 0, 1), 1)
+	await tween1.finished
+	var tween2: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING)
+	tween2.tween_property($BublinkoContainer, "position:y", 8, 0.75)
+	await tween2.finished
 	bublinkoRotate()
 	bublinkoSpeak(bublinkoIntroPhrases[introCount])
 
@@ -57,7 +64,7 @@ func _on_rotate_timer_timeout() -> void:
 func bublinkoRotate() -> void:
 	%RotateTimer.wait_time = random.randi_range(3, 7)
 	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property($Bublinko, "rotation_degrees", random.randi_range(-50, 50), %RotateTimer.wait_time)
+	tween.tween_property(%Bublinko, "rotation_degrees", random.randi_range(-50, 50), %RotateTimer.wait_time)
 	%RotateTimer.start()
 
 func _on_intro_phrase_timer_timeout() -> void:
@@ -66,7 +73,7 @@ func _on_intro_phrase_timer_timeout() -> void:
 		if bublinkoIntroPhrases.size() - 1 >= introCount:
 			bublinkoSpeak(bublinkoIntroPhrases[introCount])
 		else:
-			$Bublinko.text = ""
+			%BublinkoText.text = ""
 
 func bublinkoSpeak(phrase: Array) -> void:
 	var tween = create_tween()
@@ -77,7 +84,7 @@ func bublinkoSpeak(phrase: Array) -> void:
 			$IntroPhraseTimer.start()
 
 func bublinkoText(text: String) -> void:
-	$BublinkoText.text = text
+	%BublinkoText.text = text
 
 func introInterrupt() -> void: # if player collects animals while bublinko is still speaking
 	interrupted = true

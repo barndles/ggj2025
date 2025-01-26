@@ -204,4 +204,4 @@ animations = [{
 [node name="BubbleWall" type="AnimatedSprite2D"]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_sajwx")
-frame_progress = 0.0844295
+frame_progress = 0.801713

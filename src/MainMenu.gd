@@ -8,6 +8,7 @@ extends Control
 func _ready() -> void:
 	$Title.rotation_degrees = -10
 	rotateTitle()
+	pulseTitle()
 	var cloudCount: int = 0
 	while cloudCount < 16:
 		var cloud: Area2D = cloudScene.instantiate()
@@ -21,7 +22,6 @@ func _ready() -> void:
 	tween.tween_property($Fader, "color", Color(0, 0, 0, 0), 1)
 	await tween.finished
 	$Fader.visible = false
-	print($Music.get_stream().get_bpm())
 
 func makeBubbles(bubbles: int) -> void:
 	var bubbleCount: int = 0
@@ -51,6 +51,15 @@ func rotateTitle() -> void:
 	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property($Title, "rotation_degrees", $Title.rotation_degrees * -1, 3)
 	%RotateTimer.start()
+
+func pulseTitle() -> void:
+	$Title.scale = Vector2(1.15, 1.15)
+	%PulseTimer.start()
+	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($Title, "scale", Vector2(1, 1), 0.37)
+
+func _on_pulse_timer_timeout() -> void:
+	pulseTitle()
 
 func _on_rotate_timer_timeout() -> void:
 	rotateTitle()

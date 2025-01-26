@@ -53,6 +53,7 @@ position = Vector2(-25.1799, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder/StaticBody2D"]
 position = Vector2(11.5408, 68.5716)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i8cai")
 
 [node name="Pins" type="Node2D" parent="."]
@@ -777,7 +778,7 @@ texture = ExtResource("15_hbpei")
 texture = ExtResource("16_tlagy")
 
 [node name="Fire" parent="." instance=ExtResource("8_k8p4a")]
-position = Vector2(496, 19016)
+position = Vector2(512, 13416)
 
 [connection signal="body_entered" from="Boundaries/Boundary1" to="." method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="Boundaries/Boundary2" to="." method="_on_boundary_body_entered"]

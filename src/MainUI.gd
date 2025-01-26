@@ -117,17 +117,18 @@ func _on_intro_phrase_timer_timeout() -> void:
 func bublinkoSpeak(phrase: Array) -> void:
 	var tween = create_tween()
 	if intro:
-		tween.tween_method(bublinkoText, "", phrase[0], phrase[1])
+		print($BublinkoSpeechIntro.get_stream().get_length())
+		tween.tween_method(bublinkoText, "", phrase[0], $BublinkoSpeechIntro.get_stream().get_length())
 		await tween.finished
 		if not interrupted:
 			$IntroPhraseTimer.start()
 	else:
 		if bublinkoCollect.size() - 1 >= bublinkoAnger:
 			speaking = true
-			tween.tween_method(bublinkoText, "", bublinkoCollect[bublinkoAnger][0], phrase[1])
 			$BublinkoSpeechIntro.stop()
 			$BublinkoSpeech.set_stream(speechDict[bublinkoAnger])
 			$BublinkoSpeech.play()
+			tween.tween_method(bublinkoText, "", bublinkoCollect[bublinkoAnger][0], $BublinkoSpeech.get_stream().get_length())
 			%Bublinko.set_texture(emotes[bublinkoAnger])
 			await tween.finished
 			speaking = false
